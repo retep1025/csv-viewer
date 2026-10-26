@@ -1,0 +1,570 @@
+```css
+  /* ==============================
+     Global Styles
+  ================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background-color: #f3f4f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* ==============================
+   Main Application
+================================= */
+
+.app-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.app-header {
+  margin-bottom: 28px;
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.app-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* ==============================
+   Section Styles
+================================= */
+
+.upload-section,
+.summary-section,
+.orders-section {
+  margin-bottom: 24px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 4%);
+}
+
+.upload-section h2,
+.summary-section h2,
+.orders-section h2 {
+  margin: 0 0 18px;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* ==============================
+   CSV Upload
+================================= */
+
+.upload-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.upload-controls input[type="file"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.help-text {
+  margin: 12px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ==============================
+   Buttons
+================================= */
+
+button {
+  padding: 10px 16px;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+          background-color 0.15s ease,
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgb(59 130 246 / 35%);
+  outline-offset: 2px;
+}
+
+.secondary-button {
+  color: #374151;
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+.secondary-button:hover:not(:disabled) {
+  color: #111827;
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.table-actions button {
+  white-space: nowrap;
+}
+
+/* ==============================
+   Alerts and Messages
+================================= */
+
+.alert {
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.alert-error {
+  color: #991b1b;
+  background-color: #fee2e2;
+  border-color: #fecaca;
+}
+
+.alert-success {
+  color: #166534;
+  background-color: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+/* ==============================
+   Summary Cards
+================================= */
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100px;
+  padding: 18px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-left: 5px solid #9ca3af;
+  border-radius: 8px;
+}
+
+.summary-card span {
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summary-card strong {
+  color: #111827;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.summary-ready {
+  background-color: #f0fdf4;
+  border-left-color: #16a34a;
+}
+
+.summary-warning {
+  background-color: #fffbeb;
+  border-left-color: #d97706;
+}
+
+.summary-blocked {
+  background-color: #fef2f2;
+  border-left-color: #dc2626;
+}
+
+/* ==============================
+   Orders Toolbar
+================================= */
+
+.table-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.table-toolbar h2 {
+  margin-bottom: 6px;
+}
+
+.table-toolbar p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.table-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ==============================
+   Table Container
+================================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.orders-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  font-size: 13px;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.orders-table th {
+  color: #374151;
+  background-color: #f9fafb;
+  font-weight: 700;
+}
+
+.orders-table thead th {
+  vertical-align: top;
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.orders-table tbody tr:hover {
+  filter: brightness(0.97);
+}
+
+.orders-table td {
+  overflow-wrap: anywhere;
+}
+
+.checkbox-column {
+  width: 44px;
+  min-width: 44px;
+  text-align: center !important;
+}
+
+.checkbox-column input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  vertical-align: middle;
+  cursor: pointer;
+  accent-color: #2563eb;
+}
+
+.checkbox-column input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+/* ==============================
+   Status Row Colors
+================================= */
+
+.orders-table tbody tr.status-row.status-ready,
+.status-row.status-ready {
+  background-color: #dcfce7;
+}
+
+.orders-table tbody tr.status-row.status-warning,
+.status-row.status-warning {
+  background-color: #fef3c7;
+}
+
+.orders-table tbody tr.status-row.status-blocked,
+.status-row.status-blocked {
+  background-color: #fee2e2;
+}
+
+/* ==============================
+   Status Badges
+================================= */
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.status-badge-ready {
+  color: #166534;
+  background-color: #bbf7d0;
+  border-color: #86efac;
+}
+
+.status-badge-warning {
+  color: #92400e;
+  background-color: #fde68a;
+  border-color: #fcd34d;
+}
+
+.status-badge-blocked {
+  color: #991b1b;
+  background-color: #fecaca;
+  border-color: #fca5a5;
+}
+
+/* ==============================
+   Sortable Column Headers
+================================= */
+
+.sort-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 0;
+  color: #374151;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.sort-button:hover:not(:disabled) {
+  color: #1d4ed8;
+  background: transparent;
+}
+
+.sort-button:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ==============================
+   Column Filters
+================================= */
+
+.column-filter {
+  display: block;
+  width: 100%;
+  min-width: 95px;
+  padding: 7px 8px;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.column-filter::placeholder {
+  color: #9ca3af;
+}
+
+.column-filter:hover {
+  border-color: #9ca3af;
+}
+
+.column-filter:focus {
+  border-color: #2563eb;
+}
+
+select.column-filter {
+  cursor: pointer;
+}
+
+/* ==============================
+   Validation Messages
+================================= */
+
+.validation-errors {
+  margin: 0;
+  padding-left: 18px;
+  color: #991b1b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.validation-errors li + li {
+  margin-top: 3px;
+}
+
+.no-errors {
+  color: #166534;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==============================
+   Empty Table State
+================================= */
+
+.empty-state {
+  padding: 36px 16px !important;
+  color: #6b7280;
+  text-align: center !important;
+  font-size: 14px;
+}
+
+li{
+  font-size: 2em;
+}
+
+
+/* ==============================
+   Responsive Layout
+================================= */
+
+@media (max-width: 1000px) {
+  .app-container {
+    padding: 20px;
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .table-toolbar {
+    flex-direction: column;
+  }
+
+  .table-actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 12px;
+  }
+
+  .app-header h1 {
+    font-size: 24px;
+  }
+
+  .upload-section,
+  .summary-section,
+  .orders-section {
+    padding: 16px;
+    border-radius: 8px;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .summary-card {
+    min-height: 85px;
+    padding: 12px;
+  }
+
+  .summary-card strong {
+    font-size: 24px;
+  }
+
+  .upload-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .upload-controls input[type="file"] {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .upload-controls button {
+    width: 100%;
+  }
+
+  .table-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .table-actions button {
+    width: 100%;
+  }
+
+  .orders-table {
+    min-width: 1000px;
+  }
+}
